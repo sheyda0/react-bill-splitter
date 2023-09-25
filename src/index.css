@@ -1,3 +1,35 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.red-button {
+  background: rgb(255, 129, 130);
+  background: linear-gradient(
+    113deg,
+    rgba(255, 129, 130, 1) 0%,
+    rgba(254, 98, 99, 1) 30%,
+    rgba(255, 81, 82, 1) 100%
+  );
+  box-shadow: 2px 13px 25px -7px rgba(255, 81, 82, 0.76);
+  -webkit-box-shadow: 2px 13px 25px -7px rgba(255, 81, 82, 0.76);
+  -moz-box-shadow: 2px 13px 25px -7px rgba(255, 81, 82, 0.76);
+}
+
+.blue-button {
+  background: rgba(133, 227, 253, 1);
+  background: linear-gradient(
+    113deg,
+    rgba(133, 227, 253, 1) 0%,
+    rgba(98, 211, 243, 1) 30%,
+    rgba(70, 198, 235, 1) 100%
+  );
+  box-shadow: 2px 13px 25px -7px rgba(133, 227, 253, 0.76);
+  -webkit-box-shadow: 2px 13px 25px -7px rgba(98, 211, 243, 0.76);
+  -moz-box-shadow: 2px 13px 25px -7px rgba(70, 198, 235, 0.76);
+}
+
+.input-shadow:focus {
+  box-shadow: 2px 13px 15px -10px rgba(255, 81, 82, 0.45);
+  -webkit-box-shadow: 2px 13px 15px -10px rgba(255, 81, 82, 0.45);
+  -moz-box-shadow: 2px 13px 15px -10px rgba(255, 81, 82, 0.45);
+}

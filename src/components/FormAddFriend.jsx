@@ -1,49 +1,40 @@
-import Button from './Button';
-import Input from './Input';
-import { useState } from 'react';
+import Button from "./Button";
+import Input from "./Input";
+import { useFriendContext } from "../context/Context.js";
 
-const FormAddFriend = ({ onAddFriend }) => {
-	const [name, setName] = useState('');
-	const [image, setImage] = useState('https://i.pravatar.cc/48');
+const FormAddFriend = () => {
+  const { handleSubmit, name, setName, image, setImage } = useFriendContext();
 
-	const handleSubmit = (e) => {
-		e.preventDefault();
-
-		if (!name || !image) return;
-
-		const id = crypto.randomUUID();
-		const newFriend = {
-			id,
-			name,
-			image: `${image}?=${id}`,
-			balance: 0
-		};
-
-		onAddFriend(newFriend);
-
-		setName('');
-		setImage('https://i.pravatar.cc/48');
-	};
-
-	return (
-		<form
-			className="bg-orange-200 px-3 py-4 flex flex-col items-end mt-5 rounded-lg"
-			onSubmit={handleSubmit}>
-			<Input
-				label="Friend Name"
-				type="text"
-				value={name}
-				onChange={(e) => setName(e.target.value)}
-			/>
-			<Input
-				label="Image URL"
-				type="text"
-				value={image}
-				onChange={(e) => setImage(e.target.value)}
-			/>
-			<Button className="w-[248px]">Add</Button>
-		</form>
-	);
+  return (
+    <div>
+      <h2 className="font-semibold text-2xl mb-4">Add new friend</h2>
+      <form
+        className="border border-zinc-20 px-4 py-4 flex flex-col items-end rounded-lg"
+        onSubmit={(e) => handleSubmit(e)}
+      >
+        <Input
+          label="Friend Name"
+          type="text"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+        <Input
+          label="Image URL"
+          type="text"
+          value={image}
+          onChange={(e) => setImage(e.target.value)}
+        />
+        <div className="flex gap-6 w-full">
+          <Button className="red-button text-white font-semibold w-full">
+            close
+          </Button>
+          <Button className="blue-button text-white font-semibold w-full">
+            Add
+          </Button>
+        </div>
+      </form>
+    </div>
+  );
 };
 
 export default FormAddFriend;
