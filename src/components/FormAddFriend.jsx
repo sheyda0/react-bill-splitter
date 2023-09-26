@@ -15,7 +15,7 @@ const FormAddFriend = () => {
 
   return (
     <div>
-      <h2 className="font-semibold text-2xl mb-4">Add new friend</h2>
+      <h2 className="font-semibold text-lg md:text-2xl mb-4">Add new friend</h2>
       <form
         className="border border-zinc-20 px-4 py-6 flex flex-col items-end rounded-lg"
         onSubmit={(e) => handleSubmit(e)}

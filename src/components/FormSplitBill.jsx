@@ -19,7 +19,7 @@ const FormSplitBill = () => {
 
   return (
     <div>
-      <h2 className="font-semibold text-2xl mb-4">
+      <h2 className="font-semibold text-lg md:text-2xl mb-4">
         Split a bill with{" "}
         {selectedFriend ? selectedFriend.name : friendsList[0].name}
       </h2>

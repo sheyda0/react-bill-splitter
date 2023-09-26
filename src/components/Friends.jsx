@@ -20,7 +20,9 @@ const Friends = () => {
 
   return (
     <div>
-      <h2 className="font-semibold text-2xl mb-4">Near by friends</h2>
+      <h2 className="font-semibold text-lg md:text-2xl mb-4">
+        Near by friends
+      </h2>
       <ul className="rounded-2xl md:border border-zinc-200 max-h-[15rem] md:max-h-[25rem] overflow-y-scroll custom-scroll">
         {friends.map((friend) => (
           <li
