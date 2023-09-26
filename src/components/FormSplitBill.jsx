@@ -22,16 +22,7 @@ const FormSplitBill = () => {
         Split a bill with{" "}
         {selectedFriend ? selectedFriend.name : friendsList[0].name}
       </h2>
-      <div className="p-4 md:mt-0 mt-10 flex flex-col rounded-2xl border border-zinc-200">
-        {/* <div className="w-full">
-          <div className="p-1 border border-[#FEA63C] rounded-full h-max w-max m-auto">
-            <img
-              src={selectedFriend ? selectedFriend.image : friendsList[0].image}
-              className=" w-16 rounded-full"
-              alt=""
-            />
-          </div>
-        </div> */}
+      <div className="px-4 py-6 md:mt-0 mt-10 flex flex-col rounded-2xl border border-zinc-200">
         <form onSubmit={(e) => handleSubmitBill(e)}>
           <Input
             label="Bill value"
@@ -71,11 +62,11 @@ const FormSplitBill = () => {
               </option>
             </select>
           </div>
-          <div className="w-full flex justify-center mt-2">
-            <Button
-              className="red-button text-white font-semibold w-[15rem]"
-              // type="submit"
-            >
+          <div className="flex gap-6 w-full">
+            <Button className="red-button text-white font-semibold w-full">
+              close
+            </Button>
+            <Button className="blue-button text-white font-semibold w-full">
               split bill
             </Button>
           </div>

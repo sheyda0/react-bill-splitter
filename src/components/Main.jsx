@@ -7,7 +7,8 @@ import FormSplitBill from "./FormSplitBill";
 import { useFriendContext } from "../context/Context.js";
 
 const Main = () => {
-  const { showAddFriend, handleShowAddFriend } = useFriendContext();
+  const { showAddFriend, handleShowAddFriend, selectedFriend } =
+    useFriendContext();
 
   return (
     <div className="max-w-[900px] mx-auto mt-32 flex flex-col md:flex-row gap-6">
@@ -24,7 +25,9 @@ const Main = () => {
         )}
       </div>
       <div className="md:w-1/2 w-full">
-        {showAddFriend ? <FormAddFriend /> : <FormSplitBill />}
+        {/* {showAddFriend ? <FormAddFriend /> : <FormSplitBill />} */}
+        {selectedFriend && <FormSplitBill />}
+        {showAddFriend && <FormAddFriend />}
       </div>
     </div>
   );

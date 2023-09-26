@@ -33,3 +33,13 @@
   -webkit-box-shadow: 2px 13px 15px -10px rgba(255, 81, 82, 0.45);
   -moz-box-shadow: 2px 13px 15px -10px rgba(255, 81, 82, 0.45);
 }
+
+.red-gradient {
+  background: rgb(255, 129, 130);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 129, 130, 1) 0%,
+    rgba(255, 92, 93, 1) 30%,
+    rgba(255, 81, 82, 1) 100%
+  );
+}
