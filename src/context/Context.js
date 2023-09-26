@@ -117,6 +117,14 @@ export const FriendProvider = ({ children }) => {
     }
   };
 
+  const handleDeleteFriend = (friendId) => {
+    const updatedFriends = friends.filter((friend) => friend.id !== friendId);
+
+    setFriends(updatedFriends);
+
+    localStorage.setItem("friendsList", JSON.stringify(updatedFriends));
+  };
+
   return (
     <FriendContext.Provider
       value={{
@@ -143,7 +151,8 @@ export const FriendProvider = ({ children }) => {
         handleAddFriend,
         handleShowAddFriend,
         handleSelection,
-        handleSplitBill
+        handleSplitBill,
+        handleDeleteFriend
       }}
     >
       {children}

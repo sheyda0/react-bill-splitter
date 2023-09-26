@@ -13,7 +13,8 @@ const FormSplitBill = () => {
     paidByFriend,
     selectedFriend,
     handleSubmitBill,
-    friendsList
+    friendsList,
+    setSelectedFriend
   } = useFriendContext();
 
   return (
@@ -64,9 +65,6 @@ const FormSplitBill = () => {
           </div>
           <div className="flex gap-6 w-full">
             <Button className="red-button text-white font-semibold w-full">
-              close
-            </Button>
-            <Button className="blue-button text-white font-semibold w-full">
               split bill
             </Button>
           </div>

@@ -26,20 +26,7 @@ const FormAddFriend = () => {
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
-        <Input
-          label="Image URL"
-          type="text"
-          value={image}
-          onChange={(e) => setImage(e.target.value)}
-        />
-        {/* <input
-          type="file"
-          id="avatar"
-          name="avatar"
-          accept="image/png, image/jpeg,image/jpg"
-          value={image}
-          onChange={(e) => handleImageChange(e.target.files[0])}
-        /> */}
+        <Input label="Image URL" type="text" value={image} disabled />
         <div className="flex gap-6 w-full">
           <Button
             className="red-button text-white font-semibold w-full"

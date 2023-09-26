@@ -1,20 +1,37 @@
 import Button from "./Button";
 import { useFriendContext } from "../context/Context.js";
+// import { GrFormClose } from "react-icons/gr";
 
 const Friends = () => {
-  const { friends, selectedFriend, handleSelection, image } =
-    useFriendContext();
+  const {
+    friends,
+    selectedFriend,
+    handleSelection,
+    image,
+    handleDeleteFriend
+  } = useFriendContext();
+
+  function formatCurrency(number) {
+    return number.toLocaleString("en-US", {
+      style: "currency",
+      currency: "USD"
+    });
+  }
 
   return (
     <div>
       <h2 className="font-semibold text-2xl mb-4">Near by friends</h2>
-      <ul className="rounded-2xl border border-zinc-200 max-h-[25rem] overflow-y-scroll">
+      <ul className="rounded-2xl md:border border-zinc-200 max-h-[15rem] md:max-h-[25rem] overflow-y-scroll custom-scroll">
         {friends.map((friend) => (
           <li
-            className={`flex justify-between px-3 py-2 items-center transition duration-200 rounded-2xl ${
+            className={`friend flex justify-between px-3 py-2 items-center transition duration-200 relative ${
               friend.id === selectedFriend?.id ? "bg-[#FBE6E7]" : ""
             }`}
           >
+            {/* <GrFormClose
+              onClick={() => handleDeleteFriend(friend.id)}
+              className=" absolute top-1 left-[2px] text-zinc-500"
+            /> */}
             <div className="flex">
               <img
                 src={friend.image || image}
@@ -28,12 +45,12 @@ const Friends = () => {
                 </h3>
                 {friend.balance < 0 && (
                   <p className="text-[#FF5C5D] text-[0.92rem]">
-                    You owe {friend.name} ${Math.abs(friend.balance)}
+                    You owe {friend.name} {formatCurrency(friend.balance)}
                   </p>
                 )}
                 {friend.balance > 0 && (
                   <p className="text-[#47C7EA] text-[0.92rem]">
-                    {friend.name} owes you ${Math.abs(friend.balance)}
+                    {friend.name} owes you {formatCurrency(friend.balance)}
                   </p>
                 )}
                 {friend.balance === 0 && (
@@ -43,21 +60,23 @@ const Friends = () => {
                 )}
               </div>
             </div>
-            {friend.id === selectedFriend?.id ? (
-              <Button
-                onClick={() => handleSelection(friend)}
-                className="red-button text-white font-semibold w-24"
-              >
-                close
-              </Button>
-            ) : (
-              <Button
-                onClick={() => handleSelection(friend)}
-                className="blue-button text-white font-semibold w-24"
-              >
-                select
-              </Button>
-            )}
+            <div>
+              {friend.id === selectedFriend?.id ? (
+                <Button
+                  onClick={() => handleSelection(friend)}
+                  className="red-button text-white font-semibold w-24"
+                >
+                  close
+                </Button>
+              ) : (
+                <Button
+                  onClick={() => handleSelection(friend)}
+                  className="blue-button text-white font-semibold w-24"
+                >
+                  select
+                </Button>
+              )}
+            </div>
           </li>
         ))}
       </ul>
