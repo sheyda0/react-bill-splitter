@@ -26,7 +26,13 @@ const FormAddFriend = () => {
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
-        <Input label="Image URL" type="text" value={image} disabled />
+        <Input
+          label="Image URL"
+          type="text"
+          value={image}
+          onChange={(e) => setImage(e.target.value)}
+          disabled={true}
+        />
         <div className="flex gap-6 w-full">
           <Button
             className="red-button text-white font-semibold w-full"

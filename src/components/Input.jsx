@@ -1,4 +1,4 @@
-const Input = ({ label, type, value, onChange }) => {
+const Input = ({ label, type, value, onChange, disabled }) => {
   return (
     <div className="w-full flex justify-between mb-4">
       {/* <label>{label}</label> */}
@@ -8,6 +8,7 @@ const Input = ({ label, type, value, onChange }) => {
         value={value}
         placeholder={label}
         onChange={onChange}
+        disabled={disabled ? true : false}
       />
     </div>
   );
