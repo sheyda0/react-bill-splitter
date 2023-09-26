@@ -1,5 +1,6 @@
 import Button from "./Button";
 import { useFriendContext } from "../context/Context.js";
+import Title from "./Title";
 // import { GrFormClose } from "react-icons/gr";
 
 const Friends = () => {
@@ -20,14 +21,12 @@ const Friends = () => {
 
   return (
     <div>
-      <h2 className="font-semibold text-lg md:text-2xl mb-4">
-        Near by friends
-      </h2>
-      <ul className="rounded-2xl md:border border-zinc-200 max-h-[15rem] md:max-h-[25rem] overflow-y-scroll custom-scroll">
+      <Title>Near by friends</Title>
+      <ul className="rounded-2xl md:border border-zinc-200 max-h-[13.5rem] md:max-h-[23.2rem] overflow-y-scroll custom-scroll">
         {friends.map((friend) => (
           <li
             className={`friend flex justify-between px-3 py-2 items-center transition duration-200 relative ${
-              friend.id === selectedFriend?.id ? "bg-[#FBE6E7]" : ""
+              friend.id === selectedFriend?.id ? "md:bg-[#FBE6E7]" : ""
             }`}
           >
             {/* <GrFormClose
@@ -39,10 +38,10 @@ const Friends = () => {
                 src={friend.image || image}
                 // src={require(image) || friend.image}
                 alt="profile"
-                className="w-[60px] h-[60px] object-cover rounded-2xl mr-3"
+                className="w-[55px] h-[55px] object-cover rounded-2xl mr-3"
               />
               <div>
-                <h3 className="font-bold text-lg text-zinc-800 mb-2">
+                <h3 className="font-bold md:text-lg text-zinc-700 mb-1 mt-1">
                   {friend.name}
                 </h3>
                 {friend.balance < 0 && (

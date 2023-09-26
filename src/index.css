@@ -2,6 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
+* {
+  font-family: "Quicksand", sans-serif;
+}
+
+body {
+  font-family: "Quicksand", sans-serif;
+}
+
+@media screen and (max-width: 768px) {
+  * {
+    font-size: 15px;
+  }
+}
+
 .red-button {
   background: rgb(255, 129, 130);
   background: linear-gradient(

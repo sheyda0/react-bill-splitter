@@ -1,6 +1,7 @@
 import Button from "./Button";
 import Input from "./Input";
 import { useFriendContext } from "../context/Context.js";
+import Title from "./Title";
 
 const FormAddFriend = () => {
   const {
@@ -15,7 +16,7 @@ const FormAddFriend = () => {
 
   return (
     <div>
-      <h2 className="font-semibold text-lg md:text-2xl mb-4">Add new friend</h2>
+      <Title>Add new friend</Title>
       <form
         className="border border-zinc-20 px-4 py-6 flex flex-col items-end rounded-lg"
         onSubmit={(e) => handleSubmit(e)}

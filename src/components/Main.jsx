@@ -12,7 +12,7 @@ const Main = () => {
 
   return (
     <div className="max-w-[900px] mx-auto mt-10 md:mt-28 flex flex-col md:flex-row gap-6 px-4 pb-[10rem] md:p-0 ">
-      <div className="md:w-1/2 w-full">
+      <div className="md:w-1/2 w-full mb-4">
         <Friends />
         {!showAddFriend && (
           <Button

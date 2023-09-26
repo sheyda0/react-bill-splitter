@@ -1,6 +1,7 @@
 import Button from "./Button";
 import Input from "./Input";
 import { useFriendContext } from "../context/Context.js";
+import Title from "./Title";
 
 const FormSplitBill = () => {
   const {
@@ -19,11 +20,11 @@ const FormSplitBill = () => {
 
   return (
     <div>
-      <h2 className="font-semibold text-lg md:text-2xl mb-4">
+      <Title>
         Split a bill with{" "}
         {selectedFriend ? selectedFriend.name : friendsList[0].name}
-      </h2>
-      <div className="px-4 py-6 md:mt-0 mt-10 flex flex-col rounded-2xl border border-zinc-200">
+      </Title>
+      <div className="px-4 py-6 flex flex-col rounded-2xl border border-zinc-200">
         <form onSubmit={(e) => handleSubmitBill(e)}>
           <Input
             label="Bill value"
